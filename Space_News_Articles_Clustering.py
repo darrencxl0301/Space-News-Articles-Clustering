@@ -57,8 +57,8 @@ if page == "Home":
     st.image(space_image_path, caption="Exploring Space News", use_column_width=True)
 
     # Add autoplay audio
-    audio_file_url = 'starwars.mp3'
-    autoplay_audio(audio_file_url)
+    audio_url = 'starwars.mp3'
+    autoplay_audio(audio_url)
     
     # Subtitle for the description
     st.markdown("## Description")
