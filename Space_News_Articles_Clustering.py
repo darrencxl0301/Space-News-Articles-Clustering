@@ -49,24 +49,26 @@ if page == "Home":
     #     unsafe_allow_html=True
     # )
     
-    # Big title for the app
-    st.title("Space News Articles Clustering")
-
     # Load space PNG image and display it
     space_image_url = 'space_image.png'
     st.markdown(
-    f"""
-    <style>
-    .stApp {{
-        background-image: url('{space_image_url}');
-        background-size: cover;
-        background-position: center;
-        background-attachment: fixed;
-    }}
-    </style>
-    """,
-    unsafe_allow_html=True
-)
+        f"""
+        <style>
+        .stApp {{
+            background-image: url('{space_image_url}');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }}
+        </style>
+        """,
+        unsafe_allow_html=True
+    )
+    
+    # Big title for the app
+    st.title("Space News Articles Clustering")
+
+
 
     # Add autoplay audio
     audio_url = 'starwars.mp3'
