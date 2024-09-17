@@ -22,16 +22,6 @@ from sklearn.mixture import GaussianMixture
 from sklearn.cluster import AgglomerativeClustering, SpectralClustering, Birch
 import base64
 
-def autoplay_audio(file_path: str):
-    with open(file_path, "rb") as f:
-        data = f.read()
-        b64 = base64.b64encode(data).decode()
-        md = f"""
-            <audio id="themeAudio" autoplay="true" style="display:none;">
-            <source src="data:audio/mp3;base64,{b64}" type="audio/mp3">
-            </audio>
-            """
-        st.markdown(md, unsafe_allow_html=True)
 
 
 # Page selection for navigation
@@ -62,13 +52,21 @@ if page == "Home":
     # Big title for the app
     st.title("Space News Articles Clustering")
 
+    def autoplay_audio(file_path: str):
+    with open(file_path, "rb") as f:
+        data = f.read()
+        b64 = base64.b64encode(data).decode()
+        md = f"""
+            <audio id="themeAudio" autoplay="true" style="display:none;">
+            <source src="data:audio/mp3;base64,{b64}" type="audio/mp3">
+            </audio>
+            """
+        st.markdown(md, unsafe_allow_html=True)
 
     # Add autoplay audio
     audio_url = 'starwars.mp3'
     autoplay_audio(audio_url)
     
-
-
     # Load topics from 'topics.txt' file using os.path.join
     topic_path = os.path.join(os.getcwd(), 'topics.txt')
     with open(topic_path) as f:
