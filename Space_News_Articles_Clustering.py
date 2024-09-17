@@ -20,6 +20,7 @@ from plotly.subplots import make_subplots
 import plotly.graph_objects as go
 from sklearn.mixture import GaussianMixture
 from sklearn.cluster import AgglomerativeClustering, SpectralClustering, Birch
+import base64
 
 def autoplay_audio(file_path: str):
     with open(file_path, "rb") as f:
