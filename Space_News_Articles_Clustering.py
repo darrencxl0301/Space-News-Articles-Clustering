@@ -40,7 +40,7 @@ if page == "Home":
         """
         <style>
         .stApp {
-            background-image: url('ID3');
+            background-image: url('space_image.png');
             background-size: cover;
             background-position: center;
         }
@@ -53,11 +53,11 @@ if page == "Home":
     st.title("Space News Articles Clustering")
 
     # Load space PNG image and display it
-    space_image_path = 'ID3'
+    space_image_path = 'space_image.png'
     st.image(space_image_path, caption="Exploring Space News", use_column_width=True)
 
     # Add autoplay audio
-    audio_file_url = 'ID3'
+    audio_file_url = 'starwars.mp3'
     autoplay_audio(audio_file_url)
     
     # Subtitle for the description
