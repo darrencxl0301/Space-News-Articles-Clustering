@@ -51,7 +51,7 @@ if page == "Home":
     
     # Load space PNG image and display it
     space_image_url = 'space_image.png'
-    st.image(space_image_path, caption="Exploring Space News", use_column_width=True)
+    st.image(space_image_url, caption="Exploring Space News", use_column_width=True)
     st.markdown(
         f"""
         <style>
