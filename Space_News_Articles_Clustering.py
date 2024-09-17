@@ -67,13 +67,7 @@ if page == "Home":
     audio_url = 'starwars.mp3'
     autoplay_audio(audio_url)
     
-    # Subtitle for the description
-    st.markdown("## Description")
 
-    # Updated paragraph
-    st.markdown("""
-    The ensemble model combines **GMM** with 12 components and **t-SNE** for dimensionality reduction, allowing us to visualize high-dimensional data in a clear and interpretable way.
-    """)
 
     # Load topics from 'topics.txt' file using os.path.join
     topic_path = os.path.join(os.getcwd(), 'topics.txt')
