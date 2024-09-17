@@ -21,14 +21,16 @@ import plotly.graph_objects as go
 from sklearn.mixture import GaussianMixture
 from sklearn.cluster import AgglomerativeClustering, SpectralClustering, Birch
 
-def autoplay_audio(audio_url: str):
-    """Embed audio in the Streamlit app and autoplay it."""
-    md = f"""
-        <audio id="themeAudio" autoplay="true" controls style="display:block;">
-        <source src="{audio_url}" type="audio/mp3">
-        </audio>
-        """
-    st.markdown(md, unsafe_allow_html=True)
+def autoplay_audio(file_path: str):
+    with open(file_path, "rb") as f:
+        data = f.read()
+        b64 = base64.b64encode(data).decode()
+        md = f"""
+            <audio id="themeAudio" autoplay="true" style="display:none;">
+            <source src="data:audio/mp3;base64,{b64}" type="audio/mp3">
+            </audio>
+            """
+        st.markdown(md, unsafe_allow_html=True)
 
 
 # Page selection for navigation
