@@ -21,7 +21,14 @@ import plotly.graph_objects as go
 from sklearn.mixture import GaussianMixture
 from sklearn.cluster import AgglomerativeClustering, SpectralClustering, Birch
 
-
+def autoplay_audio(audio_url: str):
+    """Embed audio in the Streamlit app and autoplay it."""
+    md = f"""
+        <audio id="themeAudio" autoplay="true" controls style="display:block;">
+        <source src="{audio_url}" type="audio/mp3">
+        </audio>
+        """
+    st.markdown(md, unsafe_allow_html=True)
 
 
 # Page selection for navigation
@@ -29,8 +36,30 @@ page = st.sidebar.selectbox("Select a page:", ["Home", "Dashboard"])
 
 if page == "Home":
     # Big title for the app
+    st.markdown(
+        """
+        <style>
+        .stApp {
+            background-image: url('https://raw.githubusercontent.com/username/repository/main/path/to/space-image.png');
+            background-size: cover;
+            background-position: center;
+        }
+        </style>
+        """,
+        unsafe_allow_html=True
+    )
+    
+    # Big title for the app
     st.title("Space News Articles Clustering")
 
+    # Load space PNG image and display it
+    space_image_path = 'https://github.com/darrencxl0301/Space-News-Articles-Clustering/blob/main/space_image.png'
+    st.image(space_image_path, caption="Exploring Space News", use_column_width=True)
+
+    # Add autoplay audio
+    audio_file_url = 'https://github.com/darrencxl0301/Space-News-Articles-Clustering/blob/main/starwars.mp3'
+    autoplay_audio(audio_file_url)
+    
     # Subtitle for the description
     st.markdown("## Description")
 
