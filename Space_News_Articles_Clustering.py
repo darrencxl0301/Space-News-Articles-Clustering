@@ -40,7 +40,7 @@ if page == "Home":
         """
         <style>
         .stApp {
-            background-image: url('https://raw.githubusercontent.com/username/repository/main/path/to/space-image.png');
+            background-image: url('ID3');
             background-size: cover;
             background-position: center;
         }
@@ -53,11 +53,11 @@ if page == "Home":
     st.title("Space News Articles Clustering")
 
     # Load space PNG image and display it
-    space_image_path = 'https://github.com/darrencxl0301/Space-News-Articles-Clustering/blob/main/space_image.png'
+    space_image_path = 'ID3'
     st.image(space_image_path, caption="Exploring Space News", use_column_width=True)
 
     # Add autoplay audio
-    audio_file_url = 'https://github.com/darrencxl0301/Space-News-Articles-Clustering/blob/main/starwars.mp3'
+    audio_file_url = 'ID3'
     autoplay_audio(audio_file_url)
     
     # Subtitle for the description
