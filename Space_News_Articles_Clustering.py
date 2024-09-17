@@ -39,7 +39,7 @@ page = st.sidebar.selectbox("Select a page:", ["Home", "Dashboard"])
 if page == "Home":
     
     # Load space PNG image and display it
-    space_image_url = 'space_image.png'
+    space_image_url = 'https://github.com/darrencxl0301/Space-News-Articles-Clustering/blob/main/space_image.png'
     st.image(space_image_url, caption="Exploring Space News", use_column_width=True)
     # st.markdown(
     #     """
