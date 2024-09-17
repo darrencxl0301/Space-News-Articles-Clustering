@@ -53,8 +53,20 @@ if page == "Home":
     st.title("Space News Articles Clustering")
 
     # Load space PNG image and display it
-    space_image_path = 'space_image.png'
-    st.image(space_image_path, caption="Exploring Space News", use_column_width=True)
+    space_image_url = 'space_image.png'
+    st.markdown(
+    f"""
+    <style>
+    .stApp {{
+        background-image: url('{space_image_url}');
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+    }}
+    </style>
+    """,
+    unsafe_allow_html=True
+)
 
     # Add autoplay audio
     audio_url = 'starwars.mp3'
