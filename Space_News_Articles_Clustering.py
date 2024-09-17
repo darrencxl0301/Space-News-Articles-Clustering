@@ -45,7 +45,8 @@ if page == "Home":
     with open(space_image_url, "rb") as f:
         data = f.read()
         b64 = base64.b64encode(data).decode()
-
+        
+    st.image(use_column_width=True)
     style = f"""
             <style>
             .stApp {{
