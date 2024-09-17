@@ -39,27 +39,31 @@ page = st.sidebar.selectbox("Select a page:", ["Home", "Dashboard"])
 if page == "Home":
     
     # Load space PNG image and display it
-    space_image_url = 'https://github.com/darrencxl0301/Space-News-Articles-Clustering/blob/main/space_image.png'
-    st.image(space_image_url, caption="Exploring Space News", use_column_width=True)
-    # st.markdown(
-    #     """
-    #     <style>
-    #     .stApp {
-    #         background-image: url('space_image.png');
-    #         background-size: cover;
-    #         background-position: center;
-    #     }
-    #     </style>
-    #     """,
-    #     unsafe_allow_html=True
-    # )
+    space_image_url = 'space_image.png'
+    b64 = None
+    with open(space_image_url, "rb") as f:
+        data = f.read()
+        b64 = base64.b64encode(data).decode()
+
+    style = f"""
+            <style>
+            .stApp {{
+                background: url(data:image/jpg;base64,{b64});
+                background-size: cover;
+            }}
+            h1, h2, p, [data-testid="stImageCaption"]{{
+                color: white;
+            }}
+            </style>
+            """
+    st.markdown(style, unsafe_allow_html=True)
     
     # Big title for the app
     st.title("Space News Articles Clustering")
 
 
     # Add autoplay audio
-    audio_url = 'ID3'
+    audio_url = 'starwars.mp3'
     autoplay_audio(audio_url)
     
     # Subtitle for the description
