@@ -35,19 +35,19 @@ def autoplay_audio(audio_url: str):
 page = st.sidebar.selectbox("Select a page:", ["Home", "Dashboard"])
 
 if page == "Home":
-    # Big title for the app
-    st.markdown(
-        """
-        <style>
-        .stApp {
-            background-image: url('space_image.png');
-            background-size: cover;
-            background-position: center;
-        }
-        </style>
-        """,
-        unsafe_allow_html=True
-    )
+    # # Big title for the app
+    # st.markdown(
+    #     """
+    #     <style>
+    #     .stApp {
+    #         background-image: url('space_image.png');
+    #         background-size: cover;
+    #         background-position: center;
+    #     }
+    #     </style>
+    #     """,
+    #     unsafe_allow_html=True
+    # )
     
     # Big title for the app
     st.title("Space News Articles Clustering")
