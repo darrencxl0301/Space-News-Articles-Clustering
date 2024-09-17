@@ -59,7 +59,7 @@ if page == "Home":
 
 
     # Add autoplay audio
-    audio_url = 'starwars.mp3'
+    audio_url = 'https://github.com/darrencxl0301/Space-News-Articles-Clustering/blob/main/starwars.mp3'
     autoplay_audio(audio_url)
     
     # Subtitle for the description
