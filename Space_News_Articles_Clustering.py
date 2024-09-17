@@ -46,7 +46,7 @@ if page == "Home":
         data = f.read()
         b64 = base64.b64encode(data).decode()
         
-    st.image(use_column_width=True)
+    st.image(space_image_url, caption="Exploring Space News", use_column_width=True)
     style = f"""
             <style>
             .stApp {{
